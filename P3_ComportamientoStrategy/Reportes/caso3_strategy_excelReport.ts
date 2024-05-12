@@ -1,9 +1,8 @@
-import * as ExcelJS from 'exceljs';
-
 class ExcelReportStrategy implements ReportGenerationStrategy {
   generateReport(data: any): string {
     // Crear un nuevo libro de Excel
-    const workbook = new ExcelJS.Workbook();
+    const excelWorkbook = require('exceljs');
+    const workbook = new excelWorkbook.Workbook();
     const worksheet = workbook.addWorksheet('Informe');
 
     // Definir las columnas y agregar los datos al worksheet
