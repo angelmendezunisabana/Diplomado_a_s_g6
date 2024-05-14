@@ -22,15 +22,66 @@ Lenguaje seleccionado **TypeScrypt**
 
 ## Ejercicio 1 : Sistema de Gestión de Tareas
 
-Patrón seleccionado **Command**
+Patrón seleccionado: **Command**
 
 ```mermaid
 classDiagram
-    class Clase {
+    class Command {
 	    <<interface>>
-        + method1()
-        + method2()
+        + execute()
     }
+
+    class CreateTaskCommand{
+      - task: Task
+      + execute()
+    }
+
+    class EditTaskCommand{
+      - task: Task
+      + execute()
+    } 
+
+    class DeleteTaskCommand{
+      - task: Task
+      + execute()
+    }
+
+    class CompleteTaskCommand{
+      - task: Task
+      + execute()
+    }
+
+    class CommandHistory{
+      - history: Command[]
+      + push()
+      + pop()
+    }
+
+    class Task{
+      - name: string
+      - completed: bool
+      + create()
+      + edit()
+      + delete()
+      + complete()
+    }
+
+
+    class TaskManager{
+      - history: CommandHistory
+      + executeCommand(command)
+      + undo()
+    }
+
+    Command <|-- CreateTaskCommand
+    Command <|-- EditTaskCommand
+    Command <|-- DeleteTaskCommand
+    Command <|-- CompleteTaskCommand
+    CommandHistory *-- Command
+    TaskManager --> Command
+    Task *-- TaskManager
+
+
 ```    
 ## Ejercicio 2. Construcción de una Orden Personalizada de Pizza
 
