@@ -1,5 +1,7 @@
-# Universidad de la Sabana 
+# Universidad de la Sabana
+
 ## Diplomado Arquitectura de Software - Grupo 6
+
 ### Actividad 1 - Patrones de diseño
 
 - Carlos Leonardo Bravo Revelo
@@ -8,17 +10,19 @@
 - Camilo Andrés Camargo Oliveros
 - Fabio Andrés Sánchez Bernal
 
-
 # Consideraciones
 
 Lenguaje seleccionado **TypeScrypt**
+
 > **Instalación**
+>
 > - 1. Clonar reposotorio
-> - 2. 
+> - 2.
 
 > **Ejecución del proyecto**
+>
 > - 1. Clonar repositorio
-> - 2. 
+> - 2.
 
 ## Ejercicio 1 : Sistema de Gestión de Tareas
 
@@ -29,26 +33,33 @@ classDiagram
     class Command {
 	    <<interface>>
         + execute()
+        + undo()
     }
 
     class CreateTaskCommand{
       - task: Task
       + execute()
+       + undo()
     }
 
     class EditTaskCommand{
       - task: Task
+      - previousName: string
+      - newName: string
       + execute()
-    } 
+       + undo()
+    }
 
     class DeleteTaskCommand{
       - task: Task
       + execute()
+       + undo()
     }
 
     class CompleteTaskCommand{
       - task: Task
       + execute()
+       + undo()
     }
 
     class CommandHistory{
@@ -64,13 +75,13 @@ classDiagram
       + edit()
       + delete()
       + complete()
+      + uncomplete()
     }
-
 
     class TaskManager{
       - history: CommandHistory
       + executeCommand(command)
-      + undo()
+      + undoCommand()
     }
 
     Command <|-- CreateTaskCommand
@@ -82,7 +93,8 @@ classDiagram
     Task *-- TaskManager
 
 
-```    
+```
+
 ## Ejercicio 2. Construcción de una Orden Personalizada de Pizza
 
 Patrón seleccionado: **Builder**
@@ -114,20 +126,20 @@ classDiagram
       +buildTamañoPorción(tamanio: string): void
       +buildMasa(masa: string): void
       +addIngrediente(ingrediente: Ingrediente): void
-      +buildCoberturaAdicional(cobertura: boolean): void 
+      +buildCoberturaAdicional(cobertura: boolean): void
       +getPizza(): Pizza
     }
 
 
  Pizzeria <|.. PizzaPersonalizadaBuilder
- Pizzeria *-- PizzaBuilder 
+ Pizzeria *-- PizzaBuilder
  PizzaBuilder <|.. Pizza
  PizzaBuilder <|.. PizzaPersonalizadaBuilder
-```  
+```
 
 ## Ejercicio 3. La creación de un sistema de generación de informes personalizados con diferentes formatos de salida
 
-Patrón Strategy 
+Patrón Strategy
 
 ```mermaid
 classDiagram
@@ -158,12 +170,11 @@ classDiagram
     PDFReportGenerationStrategy --|> ReportGenerationStrategy
     ExcelReportGenerationStrategy --|> ReportGenerationStrategy
     HTMLReportGenerationStrategy --|> ReportGenerationStrategy
-```  
-
+```
 
 ## Ejercicio 4. Problema: Integración de Biblioteca Incompatible
 
-Patrón Adapter : 
+Patrón Adapter :
 
 ```mermaid
 classDiagram
