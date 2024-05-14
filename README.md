@@ -34,15 +34,44 @@ classDiagram
 ```    
 ## Ejercicio 2. Construcción de una Orden Personalizada de Pizza
 
-Patrón seleccionado **Patrón...**
+Patrón seleccionado: **Builder**
 
 ```mermaid
 classDiagram
-    class Clase {
-	    <<interface>>
-        + method1()
-        + method2()
+    class Pizzeria{
+      -PizzaBuilder pizzaBuilder
+      +getPizza()
     }
+    class Pizza{
+      -string tamanio
+      -string masa
+      -Ingredientes[] ingredientes
+      -boolean coberturaAdicional
+      -calcularCosto(): number
+    }
+    class PizzaBuilder{
+      <<interface>>
+      +buildTamañoPorción(tamaño: string): void
+      +buildMasa(masa: string): void
+      +addIngrediente(ingrediente: Ingrediente): void
+      +buildCoberturaAdicional(cobertura: boolean): void
+      +getPizza(): Pizza
+    }
+
+    class PizzaPersonalizadaBuilder{
+      -Pizza: pizza;
+      +buildTamañoPorción(tamanio: string): void
+      +buildMasa(masa: string): void
+      +addIngrediente(ingrediente: Ingrediente): void
+      +buildCoberturaAdicional(cobertura: boolean): void 
+      +getPizza(): Pizza
+    }
+
+
+ Pizzeria <|.. PizzaPersonalizadaBuilder
+ Pizzeria *-- PizzaBuilder 
+ PizzaBuilder <|.. Pizza
+ PizzaBuilder <|.. PizzaPersonalizadaBuilder
 ```  
 
 ## Ejercicio 3. La creación de un sistema de generación de informes personalizados con diferentes formatos de salida
