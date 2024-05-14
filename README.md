@@ -47,15 +47,37 @@ classDiagram
 
 ## Ejercicio 3. La creación de un sistema de generación de informes personalizados con diferentes formatos de salida
 
-Patrón seleccionado **Patrón...**
+Patrón Strategy 
 
 ```mermaid
 classDiagram
-    class Clase {
-	    <<interface>>
-        + method1()
-        + method2()
+    class ReportGenerationStrategy {
+        +generateReport(data: any): void
     }
+
+    class PDFReportGenerationStrategy {
+        +generateReport(data: any): void
+    }
+
+    class ExcelReportGenerationStrategy {
+        +generateReport(data: any): void
+    }
+
+    class HTMLReportGenerationStrategy {
+        +generateReport(data: any): void
+    }
+
+    class ReportGenerator {
+        -strategy: ReportGenerationStrategy
+        +setStrategy(strategy: ReportGenerationStrategy): void
+        +generateReport(data: any): void
+    }
+
+    ReportGenerator --|> ReportGenerationStrategy
+    ReportGenerator *-- ReportGenerationStrategy : has a
+    PDFReportGenerationStrategy --|> ReportGenerationStrategy
+    ExcelReportGenerationStrategy --|> ReportGenerationStrategy
+    HTMLReportGenerationStrategy --|> ReportGenerationStrategy
 ```  
 
 
