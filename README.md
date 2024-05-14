@@ -85,28 +85,79 @@ classDiagram
 ```    
 ## Ejercicio 2. Construcción de una Orden Personalizada de Pizza
 
-Patrón seleccionado **Patrón...**
+Patrón seleccionado: **Builder**
 
 ```mermaid
 classDiagram
-    class Clase {
-	    <<interface>>
-        + method1()
-        + method2()
+    class Pizzeria{
+      -PizzaBuilder pizzaBuilder
+      +getPizza()
     }
+    class Pizza{
+      -string tamanio
+      -string masa
+      -Ingredientes[] ingredientes
+      -boolean coberturaAdicional
+      -calcularCosto(): number
+    }
+    class PizzaBuilder{
+      <<interface>>
+      +buildTamañoPorción(tamaño: string): void
+      +buildMasa(masa: string): void
+      +addIngrediente(ingrediente: Ingrediente): void
+      +buildCoberturaAdicional(cobertura: boolean): void
+      +getPizza(): Pizza
+    }
+
+    class PizzaPersonalizadaBuilder{
+      -Pizza: pizza;
+      +buildTamañoPorción(tamanio: string): void
+      +buildMasa(masa: string): void
+      +addIngrediente(ingrediente: Ingrediente): void
+      +buildCoberturaAdicional(cobertura: boolean): void 
+      +getPizza(): Pizza
+    }
+
+
+ Pizzeria <|.. PizzaPersonalizadaBuilder
+ Pizzeria *-- PizzaBuilder 
+ PizzaBuilder <|.. Pizza
+ PizzaBuilder <|.. PizzaPersonalizadaBuilder
 ```  
 
 ## Ejercicio 3. La creación de un sistema de generación de informes personalizados con diferentes formatos de salida
 
-Patrón seleccionado **Patrón...**
+Patrón Strategy 
 
 ```mermaid
 classDiagram
-    class Clase {
-	    <<interface>>
-        + method1()
-        + method2()
+    class ReportGenerationStrategy {
+        +generateReport(data: any): void
     }
+
+    class PDFReportGenerationStrategy {
+        +generateReport(data: any): void
+    }
+
+    class ExcelReportGenerationStrategy {
+        +generateReport(data: any): void
+    }
+
+    class HTMLReportGenerationStrategy {
+        +generateReport(data: any): void
+    }
+
+    class ReportGenerator {
+        -strategy: ReportGenerationStrategy
+        +setStrategy(strategy: ReportGenerationStrategy): void
+        +generateReport(data: any): void
+    }
+
+    ReportGenerator --|> ReportGenerationStrategy
+    ReportGenerator *-- ReportGenerationStrategy : has a
+    PDFReportGenerationStrategy --|> ReportGenerationStrategy
+    ExcelReportGenerationStrategy --|> ReportGenerationStrategy
+    HTMLReportGenerationStrategy --|> ReportGenerationStrategy
 ```  
 
 
