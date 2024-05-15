@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "case1": "npx ts-node src/P1_ToDoCommand/index.ts",
+    "case2": "npx ts-node src/P2_PizzaBuilder/index.ts",
+    "case3": "npx ts-node src/P3_ReportsStrategy/caso3_strategy_use.ts",
+    "case4": "npx ts-node src/P4_GeoDataAdapter/index.ts"
   },
   "keywords": [],
   "author": "",
