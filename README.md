@@ -178,33 +178,36 @@ Patrón Adapter :
 
 ```mermaid
 classDiagram
-    class GeographicData {
+    class GeoData {
 	    <<interface>>
-        + load()
-        + process()
+        + reader()
+        + parseData()
+        + drawMap()
     }
     class GeoJSONData {
-        + load()
-        + process()
+        + reader()
+        + parseData()
+        + drawMap()
     }
     class KMLData {
         + loadKML()
         + processKML()
     }
-    class GeoJSONToKMLAdapter {
+    class KMLtoJsonAdapter {
         - kmlData: KMLData
-        + load()
-        + process()
+        + reader()
+        + parseData()
+        + drawMap()
     }
     class Application {
         - geographicData: GeographicData
         + processData()
     }
 
-    GeographicData <|.. GeoJSONData
-    GeographicData <|.. GeoJSONToKMLAdapter
-    GeographicData <|.. KMLData
+    GeoData <|.. GeoJSONData
+    GeoData <|.. KMLtoJsonAdapter
+    KMLtoJsonAdapter <|.. KMLData
 
-    Application --> GeographicData
+    Application --> GeoData
 
 ```
