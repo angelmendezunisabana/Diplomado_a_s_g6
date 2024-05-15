@@ -12,4 +12,4 @@ export class Application {
         this.geoData.parseData();
         this.geoData.drawMap();
     }
-}
+} 

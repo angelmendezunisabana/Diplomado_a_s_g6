@@ -23,7 +23,7 @@ export class GeoJsonData implements GeoDataInterface
     }
 
     drawMap() {
-        console.log("Generando Mapa con datos Json ... ");
+        console.log("Generando Mapa con datos Json ...");
     }
 }
 

@@ -17,6 +17,6 @@ export class KMLtoJsonAdapter implements GeoDataInterface {
     }
 
     drawMap(): void {
-        console.log("Generando Mapa con KML to Json ... ");
+        console.log("Generando Mapa con KML to Json ...");
     }
 }
