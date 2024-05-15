@@ -1,4 +1,6 @@
-class ExcelReportStrategy implements ReportGenerationStrategy {
+import { ReportGenerationStrategy } from '../Interface/caso3_strategy_interface';
+
+export class ExcelReportStrategy implements ReportGenerationStrategy {
   generateReport(data: any): string {
     // Crear un nuevo libro de Excel
     const excelWorkbook = require('exceljs');

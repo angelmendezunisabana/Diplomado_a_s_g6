@@ -1,4 +1,4 @@
 // Interfaz para la estrategia de generación de informes
-interface ReportGenerationStrategy {
+export interface ReportGenerationStrategy {
     generateReport(data: any): string;
   }

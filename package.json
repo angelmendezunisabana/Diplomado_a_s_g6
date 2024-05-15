@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "case1": "npx ts-node src/P1_ToDoCommand/index.ts",
     "case2": "npx ts-node src/P2_PizzaBuilder/index.ts",
-    "case3": "npx ts-node src/P3_ReportsStrategy/caso3_strategy_use.ts",
+    "case3": "npx ts-node src/P3_ReportsStrategy/index.ts",
     "case4": "npx ts-node src/P4_GeoDataAdapter/index.ts"
   },
   "keywords": [],
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@types/exceljs": "^1.3.0",
-    "exceljs": "^4.4.0"
+    "exceljs": "^4.4.0",
+    "pdfkit": "^0.15.0"
   }
 }

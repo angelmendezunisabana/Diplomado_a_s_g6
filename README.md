@@ -249,8 +249,37 @@ yarn case3
 
 ```sh
 > actividad_1@1.0.0 npx
-> ts-node src/P3_ReportsStrategy/caso3_strategy_use.ts
+> ts-node src/P3_ReportsStrategy/index.ts
+
+  Informe en formato PDF generado: Informe.pdf
+  Informe en formato Excel generado: Informe.xlsx
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Informe</title>
+        </head>
+        <body>
+          <h1>Informe de la empresa</h1>
+          <p><strong>Nombre de la empresa:</strong> UniSabada Diplomado S.A.</p>
+          <p><strong>Ingresos:</strong> 1000000</p>
+          <p><strong>Gastos:</strong> 500000</p>
+          <p><strong>Ganancia:</strong> 500000</p>
+          <h2>Lista de empleados:</h2>
+          <ul>
+      <li>Empleado 1 - Desarrollador</li><li>Empleado 2 - Diseñador</li><li>Empleado 3 - Gerente de Proyecto</li>
+          </ul>
+        </body>
+        </html>
+      
+  Informe en formato Excel generado: Informe.xlsx
 ```
+
+**Nota**
+Los archivos generados se almancenan en la *raíz* de este repositorio
+
 
 ## Ejercicio 4. Problema: Integración de Biblioteca Incompatible
 

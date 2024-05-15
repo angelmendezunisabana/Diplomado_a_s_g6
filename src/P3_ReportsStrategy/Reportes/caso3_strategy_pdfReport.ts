@@ -1,4 +1,5 @@
-class PDFReportStrategy implements ReportGenerationStrategy {
+import { ReportGenerationStrategy } from '../Interface/caso3_strategy_interface';
+export class PDFReportStrategy implements ReportGenerationStrategy {
   generateReport(data: any): string {
     // Crear un objeto PDFDocument (este ejemplo asume el uso de una biblioteca como PDFKit)
     const PDFDocument = require('pdfkit');

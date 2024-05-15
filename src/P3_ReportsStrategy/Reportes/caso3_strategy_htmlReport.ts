@@ -1,4 +1,5 @@
-class HTMLReportStrategy implements ReportGenerationStrategy {
+import { ReportGenerationStrategy } from '../Interface/caso3_strategy_interface';
+export class HTMLReportStrategy implements ReportGenerationStrategy {
   generateReport(data: any): string {
     // Construir el contenido HTML del informe
     let htmlContent = `

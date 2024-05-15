@@ -1,3 +1,8 @@
+import { ReportGenerator } from "./Context/caso3_strategy_class";
+import { ExcelReportStrategy } from './Reportes/caso3_strategy_excelReport'
+import { HTMLReportStrategy } from './Reportes/caso3_strategy_htmlReport'
+import { PDFReportStrategy } from './Reportes/caso3_strategy_pdfReport'
+
 // Ejemplo de uso
 const data = {
     companyName: "UniSabada Diplomado S.A.",
