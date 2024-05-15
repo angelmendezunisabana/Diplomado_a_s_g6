@@ -31,7 +31,6 @@ Lenguaje seleccionado **TypeScrypt**
 > **Estructura del Proyecto**
 
 ```
-.
 ├── src/
 │   ├── P1_ToDoCommand/
 │   │  └── index.ts
