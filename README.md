@@ -28,6 +28,24 @@ Lenguaje seleccionado **TypeScrypt**
 > - 2. Instalar dependencias: npm install o yarn install
 > - 3. Ejecutar caso: npm run caseN ó yarn caseN
 
+> **Estructura del Proyecto**
+
+```
+.
+├── src/
+│   ├── P1_ToDoCommand/
+│   │  └── index.ts
+│   └── P2_PizzaBuilder/
+│      └── index.ts
+│   └── P3_ReportsStrategy/
+│      └── index.ts
+│   └── P4_GeoDataAdapter/
+│      └── index.ts
+├── README.md
+├── package.json
+└── tsconfig.json
+```
+
 ## Ejercicio 1 : Sistema de Gestión de Tareas
 
 Patrón seleccionado: **Command**
